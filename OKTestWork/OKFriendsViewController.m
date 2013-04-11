@@ -16,9 +16,11 @@
 
 
 #define TABLE_FOOTER_LABEL_FRIENDS_MIN_LIMIT 8
-#define MIN_FRIENDS_PAGE_SIZE 8
+#define MIN_FRIENDS_PAGE_SIZE 2
 #define MAX_FRIENDS_PAGE_SIZE 100
 #define PAGE_COUNT_TO_LOAD 3
+
+#define USE_REFRESH_CONTROL 0
 
 
 @interface OKFriendsViewController ()
@@ -102,18 +104,25 @@
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self
                                                                             action:@selector(logOutAction:)];
+#if USE_REFRESH_CONTROL
+    if ([UIRefreshControl class]) {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.refreshControl addTarget:self action:@selector(refreshAction:) forControlEvents:UIControlEventValueChanged];
+    } else
+#endif
+    {
+        self.refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                  target:self
+                                                                                  action:@selector(refreshAction:)];
+        self.navigationItem.rightBarButtonItem = self.refreshBarButtonItem;
+        
+        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        spinner.frame = CGRectMake(0, 0, 34, 30);
+        [spinner startAnimating];
+        self.spinnerBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    }
 
-    self.refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                              target:self
-                                                                              action:@selector(refreshAction:)];
-    self.navigationItem.rightBarButtonItem = self.refreshBarButtonItem;
-    
     self.tableView.rowHeight = 73;
-    
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    spinner.frame = CGRectMake(0, 0, 34, 30);
-    [spinner startAnimating];
-    self.spinnerBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     
     self.tableFooterSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.tableFooterSpinner.frame = CGRectMake(0, 0, 20, 44);
@@ -194,12 +203,18 @@
 {
     self.firstLoading = YES;
     [self showRefreshSpinner];
+    if ([UIRefreshControl class]) {
+        [self.refreshControl beginRefreshing];
+    }
 }
 
 - (void)endFirstLoading
 {
     self.firstLoading = NO;
     [self hideRefreshSpinner];
+    if ([UIRefreshControl class]) {
+        [self.refreshControl endRefreshing];
+    }
 }
 
 - (BOOL)canFirstLoad
@@ -211,6 +226,10 @@
 {
     if ([self canFirstLoad]) {
         [self loadFirst];
+    } else {
+        if ([UIRefreshControl class] && !self.refreshControl.refreshing) {
+            [self.refreshControl endRefreshing];
+        }
     }
 }
 
