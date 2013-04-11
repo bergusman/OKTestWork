@@ -39,7 +39,6 @@ static NSString *md5(NSString *input);
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     if (userName) params[@"user_name"] = userName;
     if (password) params[@"password"] = password;
-    params[@"gen_token"] = @"true";
     
     return [self goMethodWithName:@"login"
                            module:@"auth"
@@ -136,17 +135,22 @@ static NSString *md5(NSString *input);
     NSString *queryString = AFQueryStringFromParametersWithEncoding(mutableParams, NSUTF8StringEncoding);
     NSData *queryData = [queryString dataUsingEncoding:NSUTF8StringEncoding];
     
+    //NSString *path = [NSString stringWithFormat:@"api/%@/%@?%@", methodModule, methodName, queryString];
     NSString *path = [NSString stringWithFormat:@"api/%@/%@", methodModule, methodName];
     
     NSString *server = (secure ? self.secureServer : self.notSecureServer);
     NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:server]];
     
+    //NSLog(@"%@", [url absoluteString]);
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:20];
+    
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:queryData];
     
+     
     AFJSONRequestOperation *requestOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
         if ([self isErrorJSON:JSON]) {

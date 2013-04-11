@@ -7,40 +7,112 @@
 //
 
 #import "OKAppDelegate.h"
+#import "OKClient.h"
+#import "OKLogInViewController.h"
+#import "OKFriendsViewController.h"
+
+
+@interface OKAppDelegate ()
+
+@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) UIImageView *splash;
+
+@end
+
 
 @implementation OKAppDelegate
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark - Splash
+
+- (void)showSplash
+{
+    self.splash = [[UIImageView alloc] init];
+    
+    if ([UIScreen mainScreen].bounds.size.height == 568) {
+        self.splash.image = [UIImage imageNamed:@"Default-568h"];
+    } else {
+        self.splash.image = [UIImage imageNamed:@"Default"];
+    }
+    
+    self.splash.frame = self.window.bounds;
+    [self.window addSubview:self.splash];
+    
+    [self performSelector:@selector(hideSplash) withObject:nil afterDelay:0.05];
+}
+
+- (void)hideSplash
+{
+    [UIView animateWithDuration:0.4 animations:^{
+        self.splash.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.splash removeFromSuperview];
+        self.splash = nil;
+        [self didHideSplash];
+    }];
+}
+
+- (void)didHideSplash
+{
+}
+
+
+#pragma mark - OKClient Notifications
+
+- (void)didLogIn:(NSNotification *)notification
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didLogOut:(NSNotification *)notification
+{
+    OKLogInViewController *logInVC = [[OKLogInViewController alloc] init];
+    logInVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentViewController:logInVC animated:YES completion:nil];
+}
+
+
+#pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[OKConfig sharedConfig] loadConfigFromFile:[[NSBundle mainBundle] infoDictionary][@"OKConfigName"]];
+    
+    [OKClient sharedClient]; // Init OKClient
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didLogIn:)
+                                                 name:OKClientDidLogInNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didLogOut:)
+                                                 name:OKClientDidLogOutNotification
+                                               object:nil];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]]; // All
+    
+    OKFriendsViewController *friendsVC = [[OKFriendsViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:friendsVC];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
+    
+    [self showSplash];
+    
+    if (![OKClient sharedClient].sessionActive) {
+        OKLogInViewController *logInVC = [[OKLogInViewController alloc] init];
+        logInVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self.navigationController presentViewController:logInVC animated:NO completion:nil];
+    }
+    
     return YES;
-}
-							
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  OKViewController.h
+//  OKUserCell.h
 //  OKTestWork
 //
 //  Created by Vitaliy Berg on 4/10/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OKViewController : UIViewController
+@interface OKUserCell : UITableViewCell
 
 @end

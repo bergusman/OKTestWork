@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Application ID</key>
+	<string>163022336</string>
+	<key>Application Key</key>
+	<string>CBAHIILKABABABABA</string>
+	<key>Application Secret Key</key>
+	<string>1BAD0F30A9A5502340BC02B5</string>
+	<key>Use Sandbox</key>
+	<false/>
+	<key>LogIn Server</key>
+	<string>http://api.odnoklassniki.ru/</string>
+	<key>Friends Page Size</key>
+	<integer>100</integer>
+</dict>
+</plist>

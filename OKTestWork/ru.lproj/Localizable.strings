@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  OKTestWork
+
+  Created by Vitaliy Berg on 4/10/13.
+  Copyright (c) 2013 Vitaliy Berg. All rights reserved.
+*/
+
+"Cancel" = "Отменить";
+"OK" =  "ОК";
+
+"LogInUserName" = "Логин, e-mail или телефон";
+"LogInPassword" = "Пароль";
+
+"LogIn" = "Войти";
+"LoggingIn" = "Вход";
+
+"LogInErrorTitle" = "Ошибка";
+"LogInErrorMessage" = "Неверный логин или пароль.";
+
+"LogOut" = "Выйти";
+"LogOutPrompt" = "Вы действительно хотите выйти?";
+
+"FriendsTitle" = "Друзья";
+"NoFriends" = "Нет друзей";
+
+"%d Friend (plural rule: one)" = "Один друг";
+"%d Friend (plural rule: few)" = "%d друга";
+"%d Friend (plural rule: many)" = "%d друзей";
+"%d Friend (plural rule: other)" = "%d друга";
+
+"SandboxDisclaimer" = "Данное приложение работает в песочнице";

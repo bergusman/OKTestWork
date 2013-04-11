@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  OKTestWork
+
+  Created by Vitaliy Berg on 4/10/13.
+  Copyright (c) 2013 Vitaliy Berg. All rights reserved.
+*/
+
+"Cancel" = "Cancel";
+"OK" = "OK";
+
+"LogInUserName" = "Login, e-mail or phone";
+"LogInPassword" = "Password";
+
+"LogIn" = "Log In";
+"LoggingIn" = "Logging In";
+
+"LogInErrorTitle" = "Error";
+"LogInErrorMessage" = "Invalid user name or password.";
+
+"LogOut" = "Log Out";
+"LogOutPrompt" = "Are you shure you want to log out?";
+
+"FriendsTitle" = "Friends";
+"NoFriends" = "No friends";
+
+"%d Friend (plural rule: one)" = "One Friend";
+"%d Friend (plural rule: other)" = "%d Friends";
+
+"SandboxDisclaimer" = "This application works in a sandbox";

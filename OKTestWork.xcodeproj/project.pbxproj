@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		129C704FAE144301A304B682 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC95C032661E49508E0CC0A2 /* libPods.a */; };
+		AD3DA03A1716ACD800D0A219 /* OKClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3DA0391716ACD800D0A219 /* OKClient.m */; };
+		AD3DA03D1716AE7100D0A219 /* PublicConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD3DA03B1716AE7100D0A219 /* PublicConfig.plist */; };
+		AD3DA03E1716AE7100D0A219 /* SandboxConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD3DA03C1716AE7100D0A219 /* SandboxConfig.plist */; };
 		AD78FBB4171512E800098F17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78FBB3171512E800098F17 /* UIKit.framework */; };
 		AD78FBB6171512E800098F17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78FBB5171512E800098F17 /* Foundation.framework */; };
 		AD78FBB8171512E800098F17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78FBB7171512E800098F17 /* CoreGraphics.framework */; };
@@ -16,27 +20,122 @@
 		AD78FBC6171512E900098F17 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBC5171512E900098F17 /* Default.png */; };
 		AD78FBC8171512E900098F17 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBC7171512E900098F17 /* Default@2x.png */; };
 		AD78FBCA171512E900098F17 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBC9171512E900098F17 /* Default-568h@2x.png */; };
-		AD78FBCD171512E900098F17 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBCB171512E900098F17 /* MainStoryboard.storyboard */; };
-		AD78FBD0171512E900098F17 /* OKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBCF171512E900098F17 /* OKViewController.m */; };
+		AD78FBD81715169100098F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBDA1715169100098F17 /* Localizable.strings */; };
+		AD78FBDD171519B500098F17 /* OKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBDC171519B500098F17 /* OKUser.m */; };
+		AD78FBE017151A1100098F17 /* OKFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBDF17151A1100098F17 /* OKFriendsViewController.m */; };
+		AD78FBE61715224700098F17 /* OKLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBE51715224700098F17 /* OKLogInViewController.m */; };
+		AD97416B1715D6BA0070083B /* OKLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD97416A1715D6BA0070083B /* OKLogInViewController.xib */; };
+		AD97416E1715DBE10070083B /* FemaleStub128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97416C1715DBE10070083B /* FemaleStub128@2x.png */; };
+		AD97416F1715DBE10070083B /* MaleStub128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97416D1715DBE10070083B /* MaleStub128@2x.png */; };
+		AD9741721715DD5B0070083B /* UITextField+OKCarriageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9741711715DD5B0070083B /* UITextField+OKCarriageColor.m */; };
+		AD9741741715E0A30070083B /* LogInTextFieldsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741731715E0A30070083B /* LogInTextFieldsBG@2x.png */; };
+		AD9741771715E1860070083B /* LogInButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741751715E1860070083B /* LogInButton@2x.png */; };
+		AD9741781715E1860070083B /* LogInButtonH@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741761715E1860070083B /* LogInButtonH@2x.png */; };
+		AD97417A1715E90C0070083B /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741791715E90C0070083B /* Logo@2x.png */; };
+		AD97417E1715F0930070083B /* LogInBG-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97417B1715F0920070083B /* LogInBG-568h@2x.png */; };
+		AD97417F1715F0930070083B /* LogInBG.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97417C1715F0930070083B /* LogInBG.png */; };
+		AD9741801715F0930070083B /* LogInBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97417D1715F0930070083B /* LogInBG@2x.png */; };
+		AD9741831715F81A0070083B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9741821715F81A0070083B /* QuartzCore.framework */; };
+		AD974186171674210070083B /* OKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = AD974185171674210070083B /* OKConfig.m */; };
+		ADC503CC17152BDA00B82795 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC503CA17152BDA00B82795 /* Icon.png */; };
+		ADC503CD17152BDA00B82795 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC503CB17152BDA00B82795 /* Icon@2x.png */; };
+		ADC503D8171531AC00B82795 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADC503D7171531AC00B82795 /* README.md */; };
+		ADC503DC17153C3000B82795 /* OKUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC503DB17153C3000B82795 /* OKUserCell.m */; };
+		ADC503E017154BD700B82795 /* OKPersonNaming.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC503DF17154BD700B82795 /* OKPersonNaming.m */; };
+		ADC503E617154F9000B82795 /* OKAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC503E517154F9000B82795 /* OKAPI.m */; };
+		ADDD2F691716D80F00DAEF8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBBF171512E800098F17 /* main.m */; };
+		ADDD2F6A1716D80F00DAEF8C /* OKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBC3171512E900098F17 /* OKAppDelegate.m */; };
+		ADDD2F6B1716D80F00DAEF8C /* OKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBDC171519B500098F17 /* OKUser.m */; };
+		ADDD2F6C1716D80F00DAEF8C /* OKFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBDF17151A1100098F17 /* OKFriendsViewController.m */; };
+		ADDD2F6D1716D80F00DAEF8C /* OKLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD78FBE51715224700098F17 /* OKLogInViewController.m */; };
+		ADDD2F6E1716D80F00DAEF8C /* OKUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC503DB17153C3000B82795 /* OKUserCell.m */; };
+		ADDD2F6F1716D80F00DAEF8C /* OKPersonNaming.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC503DF17154BD700B82795 /* OKPersonNaming.m */; };
+		ADDD2F701716D80F00DAEF8C /* OKAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC503E517154F9000B82795 /* OKAPI.m */; };
+		ADDD2F711716D80F00DAEF8C /* UITextField+OKCarriageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9741711715DD5B0070083B /* UITextField+OKCarriageColor.m */; };
+		ADDD2F721716D80F00DAEF8C /* OKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = AD974185171674210070083B /* OKConfig.m */; };
+		ADDD2F731716D80F00DAEF8C /* OKClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3DA0391716ACD800D0A219 /* OKClient.m */; };
+		ADDD2F751716D80F00DAEF8C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9741821715F81A0070083B /* QuartzCore.framework */; };
+		ADDD2F761716D80F00DAEF8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78FBB3171512E800098F17 /* UIKit.framework */; };
+		ADDD2F771716D80F00DAEF8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78FBB5171512E800098F17 /* Foundation.framework */; };
+		ADDD2F781716D80F00DAEF8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD78FBB7171512E800098F17 /* CoreGraphics.framework */; };
+		ADDD2F791716D80F00DAEF8C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC95C032661E49508E0CC0A2 /* libPods.a */; };
+		ADDD2F7B1716D80F00DAEF8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBBC171512E800098F17 /* InfoPlist.strings */; };
+		ADDD2F7C1716D80F00DAEF8C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBC5171512E900098F17 /* Default.png */; };
+		ADDD2F7D1716D80F00DAEF8C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBC7171512E900098F17 /* Default@2x.png */; };
+		ADDD2F7E1716D80F00DAEF8C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBC9171512E900098F17 /* Default-568h@2x.png */; };
+		ADDD2F7F1716D80F00DAEF8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD78FBDA1715169100098F17 /* Localizable.strings */; };
+		ADDD2F801716D80F00DAEF8C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC503CA17152BDA00B82795 /* Icon.png */; };
+		ADDD2F811716D80F00DAEF8C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC503CB17152BDA00B82795 /* Icon@2x.png */; };
+		ADDD2F821716D80F00DAEF8C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADC503D7171531AC00B82795 /* README.md */; };
+		ADDD2F831716D80F00DAEF8C /* OKLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD97416A1715D6BA0070083B /* OKLogInViewController.xib */; };
+		ADDD2F841716D80F00DAEF8C /* FemaleStub128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97416C1715DBE10070083B /* FemaleStub128@2x.png */; };
+		ADDD2F851716D80F00DAEF8C /* MaleStub128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97416D1715DBE10070083B /* MaleStub128@2x.png */; };
+		ADDD2F861716D80F00DAEF8C /* LogInTextFieldsBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741731715E0A30070083B /* LogInTextFieldsBG@2x.png */; };
+		ADDD2F871716D80F00DAEF8C /* LogInButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741751715E1860070083B /* LogInButton@2x.png */; };
+		ADDD2F881716D80F00DAEF8C /* LogInButtonH@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741761715E1860070083B /* LogInButtonH@2x.png */; };
+		ADDD2F891716D80F00DAEF8C /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD9741791715E90C0070083B /* Logo@2x.png */; };
+		ADDD2F8A1716D80F00DAEF8C /* LogInBG-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97417B1715F0920070083B /* LogInBG-568h@2x.png */; };
+		ADDD2F8B1716D80F00DAEF8C /* LogInBG.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97417C1715F0930070083B /* LogInBG.png */; };
+		ADDD2F8C1716D80F00DAEF8C /* LogInBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD97417D1715F0930070083B /* LogInBG@2x.png */; };
+		ADDD2F8D1716D80F00DAEF8C /* PublicConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD3DA03B1716AE7100D0A219 /* PublicConfig.plist */; };
+		ADDD2F8E1716D80F00DAEF8C /* SandboxConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD3DA03C1716AE7100D0A219 /* SandboxConfig.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD78FBB0171512E800098F17 /* OKTestWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKTestWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2307DE1F57CB46FE86FBE171 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AD3DA0381716ACD800D0A219 /* OKClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKClient.h; sourceTree = "<group>"; };
+		AD3DA0391716ACD800D0A219 /* OKClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKClient.m; sourceTree = "<group>"; };
+		AD3DA03B1716AE7100D0A219 /* PublicConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PublicConfig.plist; sourceTree = "<group>"; };
+		AD3DA03C1716AE7100D0A219 /* SandboxConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SandboxConfig.plist; sourceTree = "<group>"; };
+		AD78FBB0171512E800098F17 /* OKTestWorkPublic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKTestWorkPublic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD78FBB3171512E800098F17 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD78FBB5171512E800098F17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD78FBB7171512E800098F17 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AD78FBBB171512E800098F17 /* OKTestWork-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OKTestWork-Info.plist"; sourceTree = "<group>"; };
+		AD78FBBB171512E800098F17 /* PublicInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PublicInfo.plist; sourceTree = "<group>"; };
 		AD78FBBD171512E800098F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD78FBBF171512E800098F17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AD78FBC1171512E900098F17 /* OKTestWork-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OKTestWork-Prefix.pch"; sourceTree = "<group>"; };
+		AD78FBC1171512E900098F17 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		AD78FBC2171512E900098F17 /* OKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKAppDelegate.h; sourceTree = "<group>"; };
 		AD78FBC3171512E900098F17 /* OKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OKAppDelegate.m; sourceTree = "<group>"; };
 		AD78FBC5171512E900098F17 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AD78FBC7171512E900098F17 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AD78FBC9171512E900098F17 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AD78FBCC171512E900098F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		AD78FBCE171512E900098F17 /* OKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKViewController.h; sourceTree = "<group>"; };
-		AD78FBCF171512E900098F17 /* OKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OKViewController.m; sourceTree = "<group>"; };
+		AD78FBD91715169100098F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD78FBDB171519B500098F17 /* OKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUser.h; sourceTree = "<group>"; };
+		AD78FBDC171519B500098F17 /* OKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUser.m; sourceTree = "<group>"; };
+		AD78FBDE17151A1100098F17 /* OKFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKFriendsViewController.h; sourceTree = "<group>"; };
+		AD78FBDF17151A1100098F17 /* OKFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKFriendsViewController.m; sourceTree = "<group>"; };
+		AD78FBE41715224700098F17 /* OKLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKLogInViewController.h; sourceTree = "<group>"; };
+		AD78FBE51715224700098F17 /* OKLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKLogInViewController.m; sourceTree = "<group>"; };
+		AD97416A1715D6BA0070083B /* OKLogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OKLogInViewController.xib; sourceTree = "<group>"; };
+		AD97416C1715DBE10070083B /* FemaleStub128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FemaleStub128@2x.png"; path = "Images/FemaleStub128@2x.png"; sourceTree = "<group>"; };
+		AD97416D1715DBE10070083B /* MaleStub128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MaleStub128@2x.png"; path = "Images/MaleStub128@2x.png"; sourceTree = "<group>"; };
+		AD9741701715DD5B0070083B /* UITextField+OKCarriageColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+OKCarriageColor.h"; sourceTree = "<group>"; };
+		AD9741711715DD5B0070083B /* UITextField+OKCarriageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+OKCarriageColor.m"; sourceTree = "<group>"; };
+		AD9741731715E0A30070083B /* LogInTextFieldsBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LogInTextFieldsBG@2x.png"; path = "Images/LogInTextFieldsBG@2x.png"; sourceTree = "<group>"; };
+		AD9741751715E1860070083B /* LogInButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LogInButton@2x.png"; path = "Images/LogInButton@2x.png"; sourceTree = "<group>"; };
+		AD9741761715E1860070083B /* LogInButtonH@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LogInButtonH@2x.png"; path = "Images/LogInButtonH@2x.png"; sourceTree = "<group>"; };
+		AD9741791715E90C0070083B /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Logo@2x.png"; path = "Images/Logo@2x.png"; sourceTree = "<group>"; };
+		AD97417B1715F0920070083B /* LogInBG-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LogInBG-568h@2x.png"; path = "Images/LogInBG-568h@2x.png"; sourceTree = "<group>"; };
+		AD97417C1715F0930070083B /* LogInBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LogInBG.png; path = Images/LogInBG.png; sourceTree = "<group>"; };
+		AD97417D1715F0930070083B /* LogInBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LogInBG@2x.png"; path = "Images/LogInBG@2x.png"; sourceTree = "<group>"; };
+		AD9741821715F81A0070083B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD974184171674210070083B /* OKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKConfig.h; sourceTree = "<group>"; };
+		AD974185171674210070083B /* OKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKConfig.m; sourceTree = "<group>"; };
+		ADC503CA17152BDA00B82795 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		ADC503CB17152BDA00B82795 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		ADC503CE17152CD700B82795 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADC503CF17152CD700B82795 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ADC503D7171531AC00B82795 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		ADC503DA17153C3000B82795 /* OKUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUserCell.h; sourceTree = "<group>"; };
+		ADC503DB17153C3000B82795 /* OKUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUserCell.m; sourceTree = "<group>"; };
+		ADC503DE17154BD700B82795 /* OKPersonNaming.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKPersonNaming.h; sourceTree = "<group>"; };
+		ADC503DF17154BD700B82795 /* OKPersonNaming.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKPersonNaming.m; sourceTree = "<group>"; };
+		ADC503E417154F9000B82795 /* OKAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKAPI.h; sourceTree = "<group>"; };
+		ADC503E517154F9000B82795 /* OKAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKAPI.m; sourceTree = "<group>"; };
+		ADDD2F931716D81000DAEF8C /* OKTestWorkSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKTestWorkSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDD2F951716D8A400DAEF8C /* SandboxInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SandboxInfo.plist; sourceTree = "<group>"; };
+		DC95C032661E49508E0CC0A2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,19 +143,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9741831715F81A0070083B /* QuartzCore.framework in Frameworks */,
 				AD78FBB4171512E800098F17 /* UIKit.framework in Frameworks */,
 				AD78FBB6171512E800098F17 /* Foundation.framework in Frameworks */,
 				AD78FBB8171512E800098F17 /* CoreGraphics.framework in Frameworks */,
+				129C704FAE144301A304B682 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDD2F741716D80F00DAEF8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDD2F751716D80F00DAEF8C /* QuartzCore.framework in Frameworks */,
+				ADDD2F761716D80F00DAEF8C /* UIKit.framework in Frameworks */,
+				ADDD2F771716D80F00DAEF8C /* Foundation.framework in Frameworks */,
+				ADDD2F781716D80F00DAEF8C /* CoreGraphics.framework in Frameworks */,
+				ADDD2F791716D80F00DAEF8C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD3A0E4517157D0300B3E254 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD3A0E4617157D1100B3E254 /* Images */,
+			);
+			name = Resources;
+			path = OKTestWork;
+			sourceTree = "<group>";
+		};
+		AD3A0E4617157D1100B3E254 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AD9741731715E0A30070083B /* LogInTextFieldsBG@2x.png */,
+				AD9741751715E1860070083B /* LogInButton@2x.png */,
+				AD9741761715E1860070083B /* LogInButtonH@2x.png */,
+				AD97416C1715DBE10070083B /* FemaleStub128@2x.png */,
+				AD97416D1715DBE10070083B /* MaleStub128@2x.png */,
+				AD9741791715E90C0070083B /* Logo@2x.png */,
+				AD97417B1715F0920070083B /* LogInBG-568h@2x.png */,
+				AD97417C1715F0930070083B /* LogInBG.png */,
+				AD97417D1715F0930070083B /* LogInBG@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		AD78FBA7171512E800098F17 = {
 			isa = PBXGroup;
 			children = (
+				ADC503D7171531AC00B82795 /* README.md */,
+				2307DE1F57CB46FE86FBE171 /* Pods.xcconfig */,
 				AD78FBB9171512E800098F17 /* OKTestWork */,
+				AD3A0E4517157D0300B3E254 /* Resources */,
 				AD78FBB2171512E800098F17 /* Frameworks */,
 				AD78FBB1171512E800098F17 /* Products */,
 			);
@@ -65,7 +206,8 @@
 		AD78FBB1171512E800098F17 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD78FBB0171512E800098F17 /* OKTestWork.app */,
+				AD78FBB0171512E800098F17 /* OKTestWorkPublic.app */,
+				ADDD2F931716D81000DAEF8C /* OKTestWorkSandbox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +218,8 @@
 				AD78FBB3171512E800098F17 /* UIKit.framework */,
 				AD78FBB5171512E800098F17 /* Foundation.framework */,
 				AD78FBB7171512E800098F17 /* CoreGraphics.framework */,
+				AD9741821715F81A0070083B /* QuartzCore.framework */,
+				DC95C032661E49508E0CC0A2 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,9 +229,14 @@
 			children = (
 				AD78FBC2171512E900098F17 /* OKAppDelegate.h */,
 				AD78FBC3171512E900098F17 /* OKAppDelegate.m */,
-				AD78FBCB171512E900098F17 /* MainStoryboard.storyboard */,
-				AD78FBCE171512E900098F17 /* OKViewController.h */,
-				AD78FBCF171512E900098F17 /* OKViewController.m */,
+				AD974184171674210070083B /* OKConfig.h */,
+				AD974185171674210070083B /* OKConfig.m */,
+				AD9741651715CB540070083B /* Categories */,
+				ADC503E71715508600B82795 /* Networking */,
+				ADC503DD17154BC200B82795 /* Misc */,
+				AD78FBE1171521E200098F17 /* Models */,
+				AD78FBE21715220A00098F17 /* Views */,
+				AD78FBE31715221300098F17 /* Controllers */,
 				AD78FBBA171512E800098F17 /* Supporting Files */,
 			);
 			path = OKTestWork;
@@ -96,35 +245,137 @@
 		AD78FBBA171512E800098F17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AD78FBBB171512E800098F17 /* OKTestWork-Info.plist */,
+				ADC503E117154E8000B82795 /* Icons */,
+				ADC503E217154E8400B82795 /* Defaults */,
+				AD78FBBB171512E800098F17 /* PublicInfo.plist */,
+				ADDD2F951716D8A400DAEF8C /* SandboxInfo.plist */,
 				AD78FBBC171512E800098F17 /* InfoPlist.strings */,
 				AD78FBBF171512E800098F17 /* main.m */,
-				AD78FBC1171512E900098F17 /* OKTestWork-Prefix.pch */,
+				AD78FBC1171512E900098F17 /* Prefix.pch */,
+				AD78FBDA1715169100098F17 /* Localizable.strings */,
+				AD3DA03B1716AE7100D0A219 /* PublicConfig.plist */,
+				AD3DA03C1716AE7100D0A219 /* SandboxConfig.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD78FBE1171521E200098F17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD78FBDB171519B500098F17 /* OKUser.h */,
+				AD78FBDC171519B500098F17 /* OKUser.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AD78FBE21715220A00098F17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADC503DA17153C3000B82795 /* OKUserCell.h */,
+				ADC503DB17153C3000B82795 /* OKUserCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AD78FBE31715221300098F17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD78FBDE17151A1100098F17 /* OKFriendsViewController.h */,
+				AD78FBDF17151A1100098F17 /* OKFriendsViewController.m */,
+				AD78FBE41715224700098F17 /* OKLogInViewController.h */,
+				AD78FBE51715224700098F17 /* OKLogInViewController.m */,
+				AD97416A1715D6BA0070083B /* OKLogInViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AD9741651715CB540070083B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AD9741701715DD5B0070083B /* UITextField+OKCarriageColor.h */,
+				AD9741711715DD5B0070083B /* UITextField+OKCarriageColor.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		ADC503DD17154BC200B82795 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				ADC503DE17154BD700B82795 /* OKPersonNaming.h */,
+				ADC503DF17154BD700B82795 /* OKPersonNaming.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		ADC503E117154E8000B82795 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				ADC503CA17152BDA00B82795 /* Icon.png */,
+				ADC503CB17152BDA00B82795 /* Icon@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		ADC503E217154E8400B82795 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
 				AD78FBC5171512E900098F17 /* Default.png */,
 				AD78FBC7171512E900098F17 /* Default@2x.png */,
 				AD78FBC9171512E900098F17 /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			name = Defaults;
+			sourceTree = "<group>";
+		};
+		ADC503E71715508600B82795 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ADC503E417154F9000B82795 /* OKAPI.h */,
+				ADC503E517154F9000B82795 /* OKAPI.m */,
+				AD3DA0381716ACD800D0A219 /* OKClient.h */,
+				AD3DA0391716ACD800D0A219 /* OKClient.m */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AD78FBAF171512E800098F17 /* OKTestWork */ = {
+		AD78FBAF171512E800098F17 /* OKTestWork Public */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD78FBD3171512E900098F17 /* Build configuration list for PBXNativeTarget "OKTestWork" */;
+			buildConfigurationList = AD78FBD3171512E900098F17 /* Build configuration list for PBXNativeTarget "OKTestWork Public" */;
 			buildPhases = (
+				B4F260B76D6640318F46748B /* Check Pods Manifest.lock */,
 				AD78FBAC171512E800098F17 /* Sources */,
 				AD78FBAD171512E800098F17 /* Frameworks */,
 				AD78FBAE171512E800098F17 /* Resources */,
+				5D687CAD235044AA90DEF211 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OKTestWork;
+			name = "OKTestWork Public";
 			productName = OKTestWork;
-			productReference = AD78FBB0171512E800098F17 /* OKTestWork.app */;
+			productReference = AD78FBB0171512E800098F17 /* OKTestWorkPublic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADDD2F661716D80F00DAEF8C /* OKTestWork Sandbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADDD2F901716D80F00DAEF8C /* Build configuration list for PBXNativeTarget "OKTestWork Sandbox" */;
+			buildPhases = (
+				ADDD2F671716D80F00DAEF8C /* Check Pods Manifest.lock */,
+				ADDD2F681716D80F00DAEF8C /* Sources */,
+				ADDD2F741716D80F00DAEF8C /* Frameworks */,
+				ADDD2F7A1716D80F00DAEF8C /* Resources */,
+				ADDD2F8F1716D80F00DAEF8C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OKTestWork Sandbox";
+			productName = OKTestWork;
+			productReference = ADDD2F931716D81000DAEF8C /* OKTestWorkSandbox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,13 +394,15 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 			);
 			mainGroup = AD78FBA7171512E800098F17;
 			productRefGroup = AD78FBB1171512E800098F17 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AD78FBAF171512E800098F17 /* OKTestWork */,
+				AD78FBAF171512E800098F17 /* OKTestWork Public */,
+				ADDD2F661716D80F00DAEF8C /* OKTestWork Sandbox */,
 			);
 		};
 /* End PBXProject section */
@@ -163,11 +416,112 @@
 				AD78FBC6171512E900098F17 /* Default.png in Resources */,
 				AD78FBC8171512E900098F17 /* Default@2x.png in Resources */,
 				AD78FBCA171512E900098F17 /* Default-568h@2x.png in Resources */,
-				AD78FBCD171512E900098F17 /* MainStoryboard.storyboard in Resources */,
+				AD78FBD81715169100098F17 /* Localizable.strings in Resources */,
+				ADC503CC17152BDA00B82795 /* Icon.png in Resources */,
+				ADC503CD17152BDA00B82795 /* Icon@2x.png in Resources */,
+				ADC503D8171531AC00B82795 /* README.md in Resources */,
+				AD97416B1715D6BA0070083B /* OKLogInViewController.xib in Resources */,
+				AD97416E1715DBE10070083B /* FemaleStub128@2x.png in Resources */,
+				AD97416F1715DBE10070083B /* MaleStub128@2x.png in Resources */,
+				AD9741741715E0A30070083B /* LogInTextFieldsBG@2x.png in Resources */,
+				AD9741771715E1860070083B /* LogInButton@2x.png in Resources */,
+				AD9741781715E1860070083B /* LogInButtonH@2x.png in Resources */,
+				AD97417A1715E90C0070083B /* Logo@2x.png in Resources */,
+				AD97417E1715F0930070083B /* LogInBG-568h@2x.png in Resources */,
+				AD97417F1715F0930070083B /* LogInBG.png in Resources */,
+				AD9741801715F0930070083B /* LogInBG@2x.png in Resources */,
+				AD3DA03D1716AE7100D0A219 /* PublicConfig.plist in Resources */,
+				AD3DA03E1716AE7100D0A219 /* SandboxConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDD2F7A1716D80F00DAEF8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDD2F7B1716D80F00DAEF8C /* InfoPlist.strings in Resources */,
+				ADDD2F7C1716D80F00DAEF8C /* Default.png in Resources */,
+				ADDD2F7D1716D80F00DAEF8C /* Default@2x.png in Resources */,
+				ADDD2F7E1716D80F00DAEF8C /* Default-568h@2x.png in Resources */,
+				ADDD2F7F1716D80F00DAEF8C /* Localizable.strings in Resources */,
+				ADDD2F801716D80F00DAEF8C /* Icon.png in Resources */,
+				ADDD2F811716D80F00DAEF8C /* Icon@2x.png in Resources */,
+				ADDD2F821716D80F00DAEF8C /* README.md in Resources */,
+				ADDD2F831716D80F00DAEF8C /* OKLogInViewController.xib in Resources */,
+				ADDD2F841716D80F00DAEF8C /* FemaleStub128@2x.png in Resources */,
+				ADDD2F851716D80F00DAEF8C /* MaleStub128@2x.png in Resources */,
+				ADDD2F861716D80F00DAEF8C /* LogInTextFieldsBG@2x.png in Resources */,
+				ADDD2F871716D80F00DAEF8C /* LogInButton@2x.png in Resources */,
+				ADDD2F881716D80F00DAEF8C /* LogInButtonH@2x.png in Resources */,
+				ADDD2F891716D80F00DAEF8C /* Logo@2x.png in Resources */,
+				ADDD2F8A1716D80F00DAEF8C /* LogInBG-568h@2x.png in Resources */,
+				ADDD2F8B1716D80F00DAEF8C /* LogInBG.png in Resources */,
+				ADDD2F8C1716D80F00DAEF8C /* LogInBG@2x.png in Resources */,
+				ADDD2F8D1716D80F00DAEF8C /* PublicConfig.plist in Resources */,
+				ADDD2F8E1716D80F00DAEF8C /* SandboxConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D687CAD235044AA90DEF211 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		ADDD2F671716D80F00DAEF8C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+		ADDD2F8F1716D80F00DAEF8C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		B4F260B76D6640318F46748B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD78FBAC171512E800098F17 /* Sources */ = {
@@ -176,7 +530,33 @@
 			files = (
 				AD78FBC0171512E900098F17 /* main.m in Sources */,
 				AD78FBC4171512E900098F17 /* OKAppDelegate.m in Sources */,
-				AD78FBD0171512E900098F17 /* OKViewController.m in Sources */,
+				AD78FBDD171519B500098F17 /* OKUser.m in Sources */,
+				AD78FBE017151A1100098F17 /* OKFriendsViewController.m in Sources */,
+				AD78FBE61715224700098F17 /* OKLogInViewController.m in Sources */,
+				ADC503DC17153C3000B82795 /* OKUserCell.m in Sources */,
+				ADC503E017154BD700B82795 /* OKPersonNaming.m in Sources */,
+				ADC503E617154F9000B82795 /* OKAPI.m in Sources */,
+				AD9741721715DD5B0070083B /* UITextField+OKCarriageColor.m in Sources */,
+				AD974186171674210070083B /* OKConfig.m in Sources */,
+				AD3DA03A1716ACD800D0A219 /* OKClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDD2F681716D80F00DAEF8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDD2F691716D80F00DAEF8C /* main.m in Sources */,
+				ADDD2F6A1716D80F00DAEF8C /* OKAppDelegate.m in Sources */,
+				ADDD2F6B1716D80F00DAEF8C /* OKUser.m in Sources */,
+				ADDD2F6C1716D80F00DAEF8C /* OKFriendsViewController.m in Sources */,
+				ADDD2F6D1716D80F00DAEF8C /* OKLogInViewController.m in Sources */,
+				ADDD2F6E1716D80F00DAEF8C /* OKUserCell.m in Sources */,
+				ADDD2F6F1716D80F00DAEF8C /* OKPersonNaming.m in Sources */,
+				ADDD2F701716D80F00DAEF8C /* OKAPI.m in Sources */,
+				ADDD2F711716D80F00DAEF8C /* UITextField+OKCarriageColor.m in Sources */,
+				ADDD2F721716D80F00DAEF8C /* OKConfig.m in Sources */,
+				ADDD2F731716D80F00DAEF8C /* OKClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,16 +567,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				AD78FBBD171512E800098F17 /* en */,
+				ADC503CE17152CD700B82795 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AD78FBCB171512E900098F17 /* MainStoryboard.storyboard */ = {
+		AD78FBDA1715169100098F17 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AD78FBCC171512E900098F17 /* en */,
+				AD78FBD91715169100098F17 /* en */,
+				ADC503CF17152CD700B82795 /* ru */,
 			);
-			name = MainStoryboard.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -227,7 +609,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -251,7 +633,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -260,22 +642,48 @@
 		};
 		AD78FBD4171512E900098F17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2307DE1F57CB46FE86FBE171 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OKTestWork/OKTestWork-Prefix.pch";
-				INFOPLIST_FILE = "OKTestWork/OKTestWork-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = OKTestWork/Prefix.pch;
+				INFOPLIST_FILE = OKTestWork/PublicInfo.plist;
+				PRODUCT_NAME = OKTestWorkPublic;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		AD78FBD5171512E900098F17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2307DE1F57CB46FE86FBE171 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OKTestWork/OKTestWork-Prefix.pch";
-				INFOPLIST_FILE = "OKTestWork/OKTestWork-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = OKTestWork/Prefix.pch;
+				INFOPLIST_FILE = OKTestWork/PublicInfo.plist;
+				PRODUCT_NAME = OKTestWorkPublic;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		ADDD2F911716D80F00DAEF8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2307DE1F57CB46FE86FBE171 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OKTestWork/Prefix.pch;
+				INFOPLIST_FILE = OKTestWork/SandboxInfo.plist;
+				PRODUCT_NAME = OKTestWorkSandbox;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		ADDD2F921716D80F00DAEF8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2307DE1F57CB46FE86FBE171 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OKTestWork/Prefix.pch;
+				INFOPLIST_FILE = OKTestWork/SandboxInfo.plist;
+				PRODUCT_NAME = OKTestWorkSandbox;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -292,13 +700,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AD78FBD3171512E900098F17 /* Build configuration list for PBXNativeTarget "OKTestWork" */ = {
+		AD78FBD3171512E900098F17 /* Build configuration list for PBXNativeTarget "OKTestWork Public" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD78FBD4171512E900098F17 /* Debug */,
 				AD78FBD5171512E900098F17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADDD2F901716D80F00DAEF8C /* Build configuration list for PBXNativeTarget "OKTestWork Sandbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADDD2F911716D80F00DAEF8C /* Debug */,
+				ADDD2F921716D80F00DAEF8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
