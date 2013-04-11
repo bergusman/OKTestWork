@@ -8,8 +8,11 @@
 
 #import "OKConfig.h"
 
+#define OKConfigName @"OKConfigName"
+
 @interface OKConfig ()
 
+@property (nonatomic, copy) NSString *appID;
 @property (nonatomic, copy) NSString *appKey;
 @property (nonatomic, copy) NSString *appSecretKey;
 @property (nonatomic, assign) BOOL useSandbox;
@@ -20,11 +23,23 @@
 
 @implementation OKConfig
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        NSString *configName = [[NSBundle mainBundle] infoDictionary][OKConfigName];
+        NSAssert(configName, @"Cannot get config name");
+        [self loadConfigFromFile:configName];
+    }
+    return self;
+}
+
 - (void)loadConfigFromFile:(NSString *)fileName
 {
     NSURL *configURL = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
     NSDictionary *config = [NSDictionary dictionaryWithContentsOfURL:configURL];
     
+    self.appID = config[@"Application ID"];
     self.appKey = config[@"Application Key"];
     self.appSecretKey = config[@"Application Secret Key"];
     self.useSandbox = [config[@"Use Sandbox"] boolValue];

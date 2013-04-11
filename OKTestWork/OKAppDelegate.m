@@ -11,7 +11,6 @@
 #import "OKLogInViewController.h"
 #import "OKFriendsViewController.h"
 
-
 @interface OKAppDelegate ()
 
 @property (nonatomic, strong) UINavigationController *navigationController;
@@ -19,12 +18,20 @@
 
 @end
 
-
 @implementation OKAppDelegate
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [OKConfig sharedConfig];
+    }
+    return self;
 }
 
 
@@ -53,12 +60,24 @@
     } completion:^(BOOL finished) {
         [self.splash removeFromSuperview];
         self.splash = nil;
-        [self didHideSplash];
     }];
 }
 
-- (void)didHideSplash
+
+#pragma mark - Log In View Controller
+
+- (void)presentLogInViewControllerAnimated:(BOOL)animated
 {
+    OKLogInViewController *logInVC = [[OKLogInViewController alloc] init];
+    logInVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController presentViewController:logInVC animated:animated completion:nil];
+}
+
+- (void)dismissLogInViewControllerAnimated:(BOOL)animated
+{
+    if ([self.navigationController.modalViewController isKindOfClass:[OKLogInViewController class]]) {
+        [self.navigationController dismissViewControllerAnimated:animated completion:nil];
+    }
 }
 
 
@@ -66,14 +85,12 @@
 
 - (void)didLogIn:(NSNotification *)notification
 {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissLogInViewControllerAnimated:YES];
 }
 
 - (void)didLogOut:(NSNotification *)notification
 {
-    OKLogInViewController *logInVC = [[OKLogInViewController alloc] init];
-    logInVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self.navigationController presentViewController:logInVC animated:YES completion:nil];
+    [self presentLogInViewControllerAnimated:YES];
 }
 
 
@@ -81,9 +98,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[OKConfig sharedConfig] loadConfigFromFile:[[NSBundle mainBundle] infoDictionary][@"OKConfigName"]];
-    
-    [OKClient sharedClient]; // Init OKClient
+    [OKClient sharedClient];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didLogIn:)
@@ -95,10 +110,9 @@
                                                  name:OKClientDidLogOutNotification
                                                object:nil];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]]; // All
-    
     OKFriendsViewController *friendsVC = [[OKFriendsViewController alloc] initWithStyle:UITableViewStylePlain];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:friendsVC];
+    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;
@@ -107,9 +121,7 @@
     [self showSplash];
     
     if (![OKClient sharedClient].sessionActive) {
-        OKLogInViewController *logInVC = [[OKLogInViewController alloc] init];
-        logInVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self.navigationController presentViewController:logInVC animated:NO completion:nil];
+        [self presentLogInViewControllerAnimated:NO];
     }
     
     return YES;

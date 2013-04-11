@@ -11,6 +11,7 @@
 // Read about config in README.md
 @interface OKConfig : NSObject
 
+@property (nonatomic, copy, readonly) NSString *appID;
 @property (nonatomic, copy, readonly) NSString *appKey;
 @property (nonatomic, copy, readonly) NSString *appSecretKey;
 @property (nonatomic, assign, readonly) BOOL useSandbox;
@@ -18,7 +19,5 @@
 @property (nonatomic, assign, readonly) NSInteger friendsPageSize;
 
 + (OKConfig *)sharedConfig;
-
-- (void)loadConfigFromFile:(NSString *)fileName;
 
 @end
