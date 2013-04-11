@@ -12,6 +12,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 
+// TODO: Handle captcha for logging in
+
 @interface OKLogInViewController ()
 <
     UITextFieldDelegate,
@@ -162,11 +164,29 @@
     [[OKClient sharedClient] logInWithUserName:self.userNameTextField.text password:self.passwordTextField.text success:^(id JSON) {
         [self endLogIn];
     } failure:^(NSError *error, id JSON) {
+        NSLog(@"%@", error);
         [self endLogIn];
         [self handleError:error];
-        //[self performSelector:@selector(failureWithError:) withObject:error afterDelay:0.4];
     }];
-    
+}
+
+- (void)handleError:(NSError *)error
+{
+    if (error.code == OKAPIErrorCodeAuthLogin) {
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"LogInErrorTitle", @"")
+                                    message:NSLocalizedString(@"LogInErrorMessage", @"")
+                                   delegate:nil
+                          cancelButtonTitle:nil
+                          otherButtonTitles:NSLocalizedString(@"OK", @""), nil] show];
+        self.passwordTextField.text = @"";
+        [self.passwordTextField becomeFirstResponder];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"LogInUnknownErrorTitle", @"")
+                                    message:NSLocalizedString(@"LogInUnknownErrorMessage", @"")
+                                   delegate:nil
+                          cancelButtonTitle:nil
+                          otherButtonTitles:NSLocalizedString(@"OK", @""), nil] show];
+    }
 }
 
 - (void)startLogIn
@@ -188,23 +208,8 @@
     self.spinner.hidden = YES;
 }
 
-- (void)failureWithError:(NSError *)error
-{
-    [self handleError:error];
-    [self endLogIn];
-}
 
-- (void)handleError:(NSError *)error
-{
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"LogInErrorTitle", @"")
-                                message:NSLocalizedString(@"LogInErrorMessage", @"")
-                               delegate:nil
-                      cancelButtonTitle:nil
-                      otherButtonTitles:NSLocalizedString(@"OK", @""), nil] show];
-    
-    self.passwordTextField.text = @"";
-    [self.passwordTextField becomeFirstResponder];
-}
+#pragma mark - Shake Text Fields
 
 -(void)shakeTextFields
 {

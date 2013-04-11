@@ -24,7 +24,6 @@ NSString *OKCompositeName(NSString *firstName, NSString *lastName, OKPersonCompo
     return @"";
 }
 
-
 BOOL OKSearchCompare(NSString *firstName, NSString *lastName, NSString *term)
 {
     NSComparisonResult result = NSOrderedAscending;

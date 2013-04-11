@@ -18,6 +18,9 @@
 "LogInErrorTitle" = "Error";
 "LogInErrorMessage" = "Invalid user name or password.";
 
+"LogInUnknownErrorTitle" = "Error";
+"LogInUnknownErrorMessage" = "Unknown error. Try later.";
+
 "LogOut" = "Log Out";
 "LogOutPrompt" = "Are you shure you want to log out?";
 

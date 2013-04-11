@@ -249,12 +249,12 @@
 				ADC503E217154E8400B82795 /* Defaults */,
 				AD78FBBB171512E800098F17 /* PublicInfo.plist */,
 				ADDD2F951716D8A400DAEF8C /* SandboxInfo.plist */,
-				AD78FBBC171512E800098F17 /* InfoPlist.strings */,
-				AD78FBBF171512E800098F17 /* main.m */,
-				AD78FBC1171512E900098F17 /* Prefix.pch */,
-				AD78FBDA1715169100098F17 /* Localizable.strings */,
 				AD3DA03B1716AE7100D0A219 /* PublicConfig.plist */,
 				AD3DA03C1716AE7100D0A219 /* SandboxConfig.plist */,
+				AD78FBBC171512E800098F17 /* InfoPlist.strings */,
+				AD78FBDA1715169100098F17 /* Localizable.strings */,
+				AD78FBBF171512E800098F17 /* main.m */,
+				AD78FBC1171512E900098F17 /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

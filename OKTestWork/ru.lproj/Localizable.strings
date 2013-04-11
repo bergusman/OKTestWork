@@ -18,6 +18,9 @@
 "LogInErrorTitle" = "Ошибка";
 "LogInErrorMessage" = "Неверный логин или пароль.";
 
+"LogInUnknownErrorTitle" = "Ошибка";
+"LogInUnknownErrorMessage" = "Неизвестная ошибка. Попробуйте позже.";
+
 "LogOut" = "Выйти";
 "LogOutPrompt" = "Вы действительно хотите выйти?";
 

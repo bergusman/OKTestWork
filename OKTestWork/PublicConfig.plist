@@ -13,6 +13,6 @@
 	<key>LogIn Server</key>
 	<string>http://api.odnoklassniki.ru/</string>
 	<key>Friends Page Size</key>
-	<integer>100</integer>
+	<integer>20</integer>
 </dict>
 </plist>
