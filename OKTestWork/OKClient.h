@@ -16,7 +16,6 @@ extern NSString * const OKClientDidLogOutNotification;
 @interface OKClient : NSObject
 
 @property (nonatomic, strong, readonly) OKAPI *api;
-
 @property (nonatomic, assign, readonly, getter=isSessionActive) BOOL sessionActive;
 
 + (OKClient *)sharedClient;

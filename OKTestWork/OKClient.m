@@ -12,9 +12,10 @@
 NSString * const OKClientDidLogInNotification = @"OKClientDidLogInNotification";
 NSString * const OKClientDidLogOutNotification = @"OKClientDidLogOutNotification";
 
-#define OKClientSessionKey @"OKClientSessionKey"
-#define OKClientSessionSecretKey @"OKClientSessionSecretKey"
-#define OKClientSessionServerKey @"OKClientSessionServerKey"
+static NSString *const OKClientSessionInfoKey = @"OKClientSessionInfo";
+static NSString *const OKSessionServer = @"session_server";
+static NSString *const OKSessionKey = @"session_key";
+static NSString *const OKSessionSecretKey = @"session_secret_key";
 
 
 @interface OKClient ()
@@ -42,7 +43,8 @@ NSString * const OKClientDidLogOutNotification = @"OKClientDidLogOutNotification
         self.api.server = [OKConfig sharedConfig].logInServer;
         self.api.appKey = [OKConfig sharedConfig].appKey;
         self.api.appSecretKey = [OKConfig sharedConfig].appSecretKey;
-        [self restoreSessionFromCache];
+        
+        [self restoreSession];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(apiDidFailure:)
@@ -73,7 +75,7 @@ NSString * const OKClientDidLogOutNotification = @"OKClientDidLogOutNotification
         self.api.sessionSecretKey = JSON[@"session_secret_key"];
         self.sessionActive = YES;
         
-        [self storeSessionToCache];
+        [self storeSession];
         
         if (success) {
             success(JSON);
@@ -94,45 +96,61 @@ NSString * const OKClientDidLogOutNotification = @"OKClientDidLogOutNotification
     self.api.sessionKey = nil;
     self.api.sessionSecretKey = nil;
     self.sessionActive = NO;
-    [self clearSessionCache];
+    [self clearSessionInfoCache];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:OKClientDidLogOutNotification object:self userInfo:nil];
 }
 
 
-#pragma mark - Session Cache
+#pragma mark - Session
 
-// TODO: Wrap cache values to dictionary and store it
-
-- (void)restoreSessionFromCache
+- (NSDictionary *)sessionInfo
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *sessionServer = [userDefaults objectForKey:OKClientSessionServerKey];
-    NSString *sessionKey = [userDefaults objectForKey:OKClientSessionKey];
-    NSString *sessionSecretKey = [userDefaults objectForKey:OKClientSessionSecretKey];
-    if (sessionKey && sessionSecretKey && sessionServer) {
-        self.api.server = sessionServer;
-        self.api.sessionKey = sessionKey;
-        self.api.sessionSecretKey = sessionSecretKey;
+    if (self.api.server && self.api.sessionKey && self.api.sessionSecretKey) {
+        return @{OKSessionServer: self.api.server,
+                 OKSessionKey: self.api.sessionKey,
+                 OKSessionSecretKey: self.api.sessionSecretKey
+        };
+    } else {
+        return nil;
+    }
+}
+
+- (void)restoreSession
+{
+    NSDictionary *sessionInfo = [self restoreSessionInfoFromCache];
+    if (sessionInfo) {
+        self.api.server = sessionInfo[OKSessionServer];
+        self.api.sessionKey = sessionInfo[OKSessionKey];
+        self.api.sessionSecretKey = sessionInfo[OKSessionSecretKey];
         self.sessionActive = YES;
     }
 }
 
-- (void)storeSessionToCache
+- (void)storeSession
+{
+    [self storeSessionInfoToCache:[self sessionInfo]];
+}
+
+
+#pragma mark - Session Info Cache
+
+- (NSDictionary *)restoreSessionInfoFromCache
+{
+    return [[NSUserDefaults standardUserDefaults] dictionaryForKey:OKClientSessionInfoKey];
+}
+
+- (void)storeSessionInfoToCache:(NSDictionary *)sessionInfo
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:self.api.server forKey:OKClientSessionServerKey];
-    [userDefaults setObject:self.api.sessionKey forKey:OKClientSessionKey];
-    [userDefaults setObject:self.api.sessionSecretKey forKey:OKClientSessionSecretKey];
+    [userDefaults setObject:sessionInfo forKey:OKClientSessionInfoKey];
     [userDefaults synchronize];
 }
 
-- (void)clearSessionCache
+- (void)clearSessionInfoCache
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults removeObjectForKey:OKClientSessionServerKey];
-    [userDefaults removeObjectForKey:OKClientSessionKey];
-    [userDefaults removeObjectForKey:OKClientSessionSecretKey];
+    [userDefaults removeObjectForKey:OKClientSessionInfoKey];
     [userDefaults synchronize];
 }
 
