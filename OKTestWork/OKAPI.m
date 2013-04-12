@@ -145,7 +145,7 @@ static NSString *md5(NSString *input);
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:20];
+                                                       timeoutInterval:8];
     
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:queryData];

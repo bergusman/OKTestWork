@@ -68,6 +68,8 @@ static NSString *const OKSessionSecretKey = @"session_secret_key";
                   success:(void (^)(id JSON))success
                   failure:(void (^)(NSError *error, id JSON))failure;
 {
+    self.api.server = [OKConfig sharedConfig].logInServer;
+    
     [self.api authLogInWithUserName:userName password:password success:^(id JSON) {
         
         self.api.server = JSON[@"api_server"];
@@ -92,9 +94,10 @@ static NSString *const OKSessionSecretKey = @"session_secret_key";
 
 - (void)logOut
 {
-    self.api.server = [OKConfig sharedConfig].logInServer;
-    self.api.sessionKey = nil;
-    self.api.sessionSecretKey = nil;
+    if (!self.sessionActive) {
+        return;
+    }
+    
     self.sessionActive = NO;
     [self clearSessionInfoCache];
     

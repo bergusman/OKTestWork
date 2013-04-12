@@ -16,6 +16,7 @@
 
 
 #define TABLE_FOOTER_LABEL_FRIENDS_MIN_LIMIT 8
+#define FIRST_FRIENDS_PAGE_SIZE 10
 #define MIN_FRIENDS_PAGE_SIZE 2
 #define MAX_FRIENDS_PAGE_SIZE 100
 #define PAGE_COUNT_TO_LOAD 3
@@ -66,29 +67,13 @@
                                                      name:OKClientDidLogOutNotification
                                                    object:nil];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(didLogIn:)
-                                                     name:OKClientDidLogOutNotification
-                                                   object:nil];
-        
     }
     return self;
 }
 
 - (void)didLogOut:(NSNotification *)notification
 {
-    [self.nextLoadingRequest cancel];
-    self.nextLoadingRequest = nil;
-    self.firstLoading = NO;
-    self.nextLoading = NO;
-    self.friendUIDs = nil;
-    self.friends = nil;
-    [self.tableView reloadData];
-}
-
-- (void)didLogIn:(NSNotification *)notification
-{
-    [self showTableFooterLabel];
+    [self clearFriends];
 }
 
 
@@ -160,6 +145,18 @@
 
 
 #pragma mark - Friends
+
+- (void)clearFriends
+{
+    [self.nextLoadingRequest cancel];
+    self.nextLoadingRequest = nil;
+    self.firstLoading = NO;
+    self.nextLoading = NO;
+    self.friendUIDs = nil;
+    self.friends = nil;
+    [self.tableView reloadData];
+    [self showTableFooterLabel];
+}
 
 - (NSArray *)orderUsers:(NSArray *)users withUIDs:(NSArray *)uids
 {
@@ -242,7 +239,7 @@
     
     [[OKClient sharedClient].api friendsGetWithSuccess:^(id JSON) {
         NSMutableArray *uids = [JSON mutableCopy];
-        NSArray *firstUIDs = [uids subarrayWithRange:NSMakeRange(0, MIN([uids count], 10))];
+        NSArray *firstUIDs = [uids subarrayWithRange:NSMakeRange(0, MIN([uids count], FIRST_FRIENDS_PAGE_SIZE))];
         
         [[OKClient sharedClient].api usersGetInfoWithUIDs:firstUIDs fields:[OKUser standardFields] success:^(id JSON) {
             NSArray *unorderedUsers = [OKUser usersWithAttributes:JSON];
