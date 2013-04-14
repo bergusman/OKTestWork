@@ -64,9 +64,9 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:
-            @"<%@:0x%x; uid = %@; firstName = %@; lastName = %@>",
+            @"<%@:%p; uid = %@; firstName = %@; lastName = %@>",
             [self class],
-            (unsigned int)self,
+            self,
             self.uid,
             self.firstName,
             self.lastName];
